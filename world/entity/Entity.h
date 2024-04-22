@@ -21,6 +21,8 @@ public:
     [[nodiscard]] std::uint32_t GetMaxHealth() const;
     [[nodiscard]] int GetXPos() const;
     [[nodiscard]] int GetYPos() const;
+
+    virtual bool IsDead();
 };
 
 

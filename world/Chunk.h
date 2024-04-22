@@ -11,12 +11,12 @@ struct ChunkPosition {
 
 class Chunk {
 private:
-    std::list<Entity*> entities{};
+    std::list<Entity*> entities = {};
 public:
     void Update();
     void AddEntity(Entity* entity);
     void RemoveEntity(Entity* entity);
-    std::list<Entity*> GetEntities();
+    [[nodiscard]] std::list<Entity*> GetEntities() const { return entities; }
 
     const static int CHUNK_SIZE = 16;
 };

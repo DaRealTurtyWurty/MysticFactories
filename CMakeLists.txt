@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.28)
 project(MysticFactories)
 
-include_directories("D:/CPP-Libs/SDL2-2.30.2/include")
-include_directories("D:/CPP-Libs/SDL2_image-2.8.2/include")
-include_directories("D:/CPP-Libs/SDL2_ttf-2.22.0/include")
+include_directories("F:/CPP-Libs/SDL2/include")
+include_directories("F:/CPP-Libs/SDL2_image/include")
+include_directories("F:/CPP-Libs/SDL2_ttf/include")
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -19,8 +19,11 @@ add_executable(MysticFactories main.cpp
         renderer/WorldRenderer.cpp
         renderer/WorldRenderer.h
         world/entity/Player.cpp
-        world/entity/Player.h)
+        world/entity/Player.h
+        renderer/Texture.h
+        world/ChunkGenerator.cpp
+        world/ChunkGenerator.h)
 
-target_link_libraries(MysticFactories "D:/CPP-Libs/SDL2-2.30.2/lib/x64/SDL2.lib")
-target_link_libraries(MysticFactories "D:/CPP-Libs/SDL2_image-2.8.2/lib/x64/SDL2_image.lib")
-target_link_libraries(MysticFactories "D:/CPP-Libs/SDL2_ttf-2.22.0/lib/x64/SDL2_ttf.lib")
+target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2/lib/x64/SDL2.lib")
+target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2_image/lib/x64/SDL2_image.lib")
+target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2_ttf/lib/x64/SDL2_ttf.lib")

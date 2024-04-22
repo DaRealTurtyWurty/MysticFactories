@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MysticFactories"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/MysticFactories/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MysticFactories">
+				<Option output="E:/MysticFactories/cmake-build-debug/MysticFactories.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/MysticFactories/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/CPP-Libs/SDL2/include"/>
+					<Add directory="F:/CPP-Libs/SDL2_image/include"/>
+					<Add directory="F:/CPP-Libs/SDL2_ttf/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 MysticFactories"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MysticFactories/fast">
+				<Option output="E:/MysticFactories/cmake-build-debug/MysticFactories.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/MysticFactories/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/CPP-Libs/SDL2/include"/>
+					<Add directory="F:/CPP-Libs/SDL2_image/include"/>
+					<Add directory="F:/CPP-Libs/SDL2_ttf/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 MysticFactories/fast"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/MysticFactories/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/MysticFactories/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/MysticFactories/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/MysticFactories/Constants.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/main.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/renderer/Text.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/renderer/Texture.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/renderer/WorldRenderer.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/renderer/WorldRenderer.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/Chunk.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/Chunk.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/ChunkGenerator.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/ChunkGenerator.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/World.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/World.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/entity/Entity.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/entity/Entity.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/entity/Player.cpp">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/world/entity/Player.h">
+			<Option target="MysticFactories"/>
+		</Unit>
+		<Unit filename="E:/MysticFactories/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

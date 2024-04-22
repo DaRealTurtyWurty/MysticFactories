@@ -40,3 +40,7 @@ int Entity::GetXPos() const {
 int Entity::GetYPos() const {
     return yPos;
 }
+
+bool Entity::IsDead() {
+    return health <= 0;
+}
