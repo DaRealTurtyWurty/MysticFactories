@@ -19,7 +19,9 @@ public:
     void Update();
     void Load();
     void Save();
+    std::vector<Chunk*> GetNearbyChunks(int atX, int atY);
     std::vector<Chunk*> GetNearbyChunks();
+    std::list<Entity*> GetEntities(int x, int y, int radius);
 
     [[nodiscard]] Player* GetPlayer() const {
         return player;

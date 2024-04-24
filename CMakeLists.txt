@@ -22,7 +22,13 @@ add_executable(MysticFactories main.cpp
         world/entity/Player.h
         renderer/Texture.h
         world/ChunkGenerator.cpp
-        world/ChunkGenerator.h)
+        world/ChunkGenerator.h
+        world/tile/TileType.h
+        world/tile/TileData.h
+        noise/Noise.h
+        noise/PerlinNoise.cpp
+        noise/PerlinNoise.h
+        math/Vector2.h)
 
 target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2/lib/x64/SDL2.lib")
 target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2_image/lib/x64/SDL2_image.lib")

@@ -23,6 +23,8 @@ public:
     [[nodiscard]] int GetYPos() const;
 
     virtual bool IsDead();
+
+    int DistanceTo(int x, int y) const;
 };
 
 

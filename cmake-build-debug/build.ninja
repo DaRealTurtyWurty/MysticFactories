@@ -52,44 +52,58 @@ build cmake_object_order_depends_target_MysticFactories: phony || CMakeFiles/Mys
 build CMakeFiles/MysticFactories.dir/main.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/main.cpp || cmake_object_order_depends_target_MysticFactories
   DEP_FILE = CMakeFiles\MysticFactories.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/CPP-Libs/SDL2-2.30.2/include -ID:/CPP-Libs/SDL2_image-2.8.2/include -ID:/CPP-Libs/SDL2_ttf-2.22.0/include
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir
 
 build CMakeFiles/MysticFactories.dir/world/World.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/world/World.cpp || cmake_object_order_depends_target_MysticFactories
   DEP_FILE = CMakeFiles\MysticFactories.dir\world\World.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/CPP-Libs/SDL2-2.30.2/include -ID:/CPP-Libs/SDL2_image-2.8.2/include -ID:/CPP-Libs/SDL2_ttf-2.22.0/include
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\world
 
 build CMakeFiles/MysticFactories.dir/world/Chunk.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/world/Chunk.cpp || cmake_object_order_depends_target_MysticFactories
   DEP_FILE = CMakeFiles\MysticFactories.dir\world\Chunk.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/CPP-Libs/SDL2-2.30.2/include -ID:/CPP-Libs/SDL2_image-2.8.2/include -ID:/CPP-Libs/SDL2_ttf-2.22.0/include
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\world
 
 build CMakeFiles/MysticFactories.dir/world/entity/Entity.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/world/entity/Entity.cpp || cmake_object_order_depends_target_MysticFactories
   DEP_FILE = CMakeFiles\MysticFactories.dir\world\entity\Entity.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/CPP-Libs/SDL2-2.30.2/include -ID:/CPP-Libs/SDL2_image-2.8.2/include -ID:/CPP-Libs/SDL2_ttf-2.22.0/include
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\world\entity
 
 build CMakeFiles/MysticFactories.dir/renderer/WorldRenderer.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/renderer/WorldRenderer.cpp || cmake_object_order_depends_target_MysticFactories
   DEP_FILE = CMakeFiles\MysticFactories.dir\renderer\WorldRenderer.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/CPP-Libs/SDL2-2.30.2/include -ID:/CPP-Libs/SDL2_image-2.8.2/include -ID:/CPP-Libs/SDL2_ttf-2.22.0/include
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\renderer
 
 build CMakeFiles/MysticFactories.dir/world/entity/Player.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/world/entity/Player.cpp || cmake_object_order_depends_target_MysticFactories
   DEP_FILE = CMakeFiles\MysticFactories.dir\world\entity\Player.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -ID:/CPP-Libs/SDL2-2.30.2/include -ID:/CPP-Libs/SDL2_image-2.8.2/include -ID:/CPP-Libs/SDL2_ttf-2.22.0/include
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\world\entity
+
+build CMakeFiles/MysticFactories.dir/world/ChunkGenerator.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/world/ChunkGenerator.cpp || cmake_object_order_depends_target_MysticFactories
+  DEP_FILE = CMakeFiles\MysticFactories.dir\world\ChunkGenerator.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
+  OBJECT_DIR = CMakeFiles\MysticFactories.dir
+  OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\world
+
+build CMakeFiles/MysticFactories.dir/noise/PerlinNoise.cpp.obj: CXX_COMPILER__MysticFactories_unscanned_Debug D$:/CLionProjects/MysticFactories/noise/PerlinNoise.cpp || cmake_object_order_depends_target_MysticFactories
+  DEP_FILE = CMakeFiles\MysticFactories.dir\noise\PerlinNoise.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IF:/CPP-Libs/SDL2/include -IF:/CPP-Libs/SDL2_image/include -IF:/CPP-Libs/SDL2_ttf/include
+  OBJECT_DIR = CMakeFiles\MysticFactories.dir
+  OBJECT_FILE_DIR = CMakeFiles\MysticFactories.dir\noise
 
 
 # =============================================================================
@@ -99,9 +113,9 @@ build CMakeFiles/MysticFactories.dir/world/entity/Player.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the executable MysticFactories.exe
 
-build MysticFactories.exe: CXX_EXECUTABLE_LINKER__MysticFactories_Debug CMakeFiles/MysticFactories.dir/main.cpp.obj CMakeFiles/MysticFactories.dir/world/World.cpp.obj CMakeFiles/MysticFactories.dir/world/Chunk.cpp.obj CMakeFiles/MysticFactories.dir/world/entity/Entity.cpp.obj CMakeFiles/MysticFactories.dir/renderer/WorldRenderer.cpp.obj CMakeFiles/MysticFactories.dir/world/entity/Player.cpp.obj | D$:/CPP-Libs/SDL2-2.30.2/lib/x64/SDL2.lib D$:/CPP-Libs/SDL2_image-2.8.2/lib/x64/SDL2_image.lib D$:/CPP-Libs/SDL2_ttf-2.22.0/lib/x64/SDL2_ttf.lib
+build MysticFactories.exe: CXX_EXECUTABLE_LINKER__MysticFactories_Debug CMakeFiles/MysticFactories.dir/main.cpp.obj CMakeFiles/MysticFactories.dir/world/World.cpp.obj CMakeFiles/MysticFactories.dir/world/Chunk.cpp.obj CMakeFiles/MysticFactories.dir/world/entity/Entity.cpp.obj CMakeFiles/MysticFactories.dir/renderer/WorldRenderer.cpp.obj CMakeFiles/MysticFactories.dir/world/entity/Player.cpp.obj CMakeFiles/MysticFactories.dir/world/ChunkGenerator.cpp.obj CMakeFiles/MysticFactories.dir/noise/PerlinNoise.cpp.obj | F$:/CPP-Libs/SDL2/lib/x64/SDL2.lib F$:/CPP-Libs/SDL2_image/lib/x64/SDL2_image.lib F$:/CPP-Libs/SDL2_ttf/lib/x64/SDL2_ttf.lib
   FLAGS = -g
-  LINK_LIBRARIES = D:/CPP-Libs/SDL2-2.30.2/lib/x64/SDL2.lib  D:/CPP-Libs/SDL2_image-2.8.2/lib/x64/SDL2_image.lib  D:/CPP-Libs/SDL2_ttf-2.22.0/lib/x64/SDL2_ttf.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = F:/CPP-Libs/SDL2/lib/x64/SDL2.lib  F:/CPP-Libs/SDL2_image/lib/x64/SDL2_image.lib  F:/CPP-Libs/SDL2_ttf/lib/x64/SDL2_ttf.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MysticFactories.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

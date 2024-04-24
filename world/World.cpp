@@ -1,6 +1,7 @@
 #include "World.h"
 
 #include <utility>
+#include <intrin.h>
 
 World::World(std::string name) : name(std::move(name)) {
     this->player = new Player(100, 100, 0, 0); // TODO: Load data from file
@@ -40,12 +41,12 @@ void World::Save() {
     // TODO: Save world data to file
 }
 
-std::vector<Chunk*> World::GetNearbyChunks() {
+std::vector<Chunk*> World::GetNearbyChunks(int atX, int atY) {
     std::vector<Chunk*> nearbyChunks;
-    ChunkPosition playerChunkPosition = {player->GetXPos() / Chunk::CHUNK_SIZE, player->GetYPos() / Chunk::CHUNK_SIZE};
+    ChunkPosition chunkPos = {atX / CHUNK_SIZE, atY / CHUNK_SIZE};
 
-    for (int x = playerChunkPosition.x - 1; x <= playerChunkPosition.x + 1; x++) {
-        for (int y = playerChunkPosition.y - 1; y <= playerChunkPosition.y + 1; y++) {
+    for (int x = chunkPos.x - 1; x <= chunkPos.x + 1; x++) {
+        for (int y = chunkPos.y - 1; y <= chunkPos.y + 1; y++) {
             Chunk* chunk = GetChunk(x, y);
             if(chunk != nullptr)
                 nearbyChunks.push_back(chunk);
@@ -53,4 +54,37 @@ std::vector<Chunk*> World::GetNearbyChunks() {
     }
 
     return nearbyChunks;
+}
+
+std::vector<Chunk *> World::GetNearbyChunks() {
+    return World::GetNearbyChunks(player->GetXPos(), player->GetYPos());
+}
+
+std::list<Entity *> World::GetEntities(int x, int y, int radius) {
+    // find all chunks in the radius
+    int chunkX = x / CHUNK_SIZE;
+    int chunkY = y / CHUNK_SIZE;
+    int chunkRadius = ceil(static_cast<double>(radius) / CHUNK_SIZE);
+
+    std::vector<Chunk*> nearbyChunks;
+    for (int i = chunkX - chunkRadius; i <= chunkX + chunkRadius; i++) {
+        for (int j = chunkY - chunkRadius; j <= chunkY + chunkRadius; j++) {
+            Chunk* chunk = GetChunk(i, j);
+            if (chunk != nullptr) {
+                nearbyChunks.push_back(chunk);
+            }
+        }
+    }
+
+    // find all entities in the chunks
+    std::list<Entity*> entities;
+    for (auto chunk : nearbyChunks) {
+        for (auto entity : chunk->GetEntities()) {
+            if (entity->DistanceTo(x, y) <= radius) {
+                entities.push_back(entity);
+            }
+        }
+    }
+
+    return entities;
 }

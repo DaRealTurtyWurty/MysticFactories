@@ -1,1 +1,0 @@
- "F:/CPP-Libs/SDL2/lib/x64/SDL2.lib" "F:/CPP-Libs/SDL2_image/lib/x64/SDL2_image.lib" "F:/CPP-Libs/SDL2_ttf/lib/x64/SDL2_ttf.lib" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

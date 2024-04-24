@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "Entity.h"
 
 Entity::Entity(std::uint32_t health, std::uint32_t maxHealth, int xPos, int yPos) :
@@ -43,4 +44,8 @@ int Entity::GetYPos() const {
 
 bool Entity::IsDead() {
     return health <= 0;
+}
+
+int Entity::DistanceTo(int x, int y) const {
+    return abs(xPos - x) + abs(yPos - y);
 }
