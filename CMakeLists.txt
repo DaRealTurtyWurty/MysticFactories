@@ -28,7 +28,10 @@ add_executable(MysticFactories main.cpp
         noise/Noise.h
         noise/PerlinNoise.cpp
         noise/PerlinNoise.h
-        math/Vector2.h)
+        math/Vector2f.h
+        renderer/Camera.cpp
+        renderer/Camera.h
+)
 
 target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2/lib/x64/SDL2.lib")
 target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2_image/lib/x64/SDL2_image.lib")

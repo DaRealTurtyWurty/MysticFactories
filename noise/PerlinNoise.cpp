@@ -1,6 +1,6 @@
 #include "PerlinNoise.h"
 #include <cmath>
-#include "../math/Vector2.h"
+#include "../math/Vector2f.h"
 
 float Interpolate(float a, float b, float weight, InterpolationType type) {
     if (weight < 0.0)
@@ -16,9 +16,11 @@ float Interpolate(float a, float b, float weight, InterpolationType type) {
         case InterpolationType::SmootherStep:
             return (b - a) * ((weight * (weight * 6.0f - 15.0f) + 10.0f) * weight * weight * weight) + a;
     }
+
+    return 0.0f;
 }
 
-Vector2 RandomGradient(int x, int y) {
+Vector2f RandomGradient(int x, int y) {
     // No precomputed gradients mean this works for any number of grid coordinates
     const unsigned w = 8 * sizeof(unsigned);
     const unsigned rotationWidth = w / 2;
@@ -32,14 +34,14 @@ Vector2 RandomGradient(int x, int y) {
 
     float random = a * (3.14159265 / ~(~0u >> 1)); // in [0, 2*Pi]
 
-    Vector2 vector;
+    Vector2f vector;
     vector.x = std::cos(random);
     vector.y = std::sin(random);
     return vector;
 }
 
 float DotGridGradient(int ix, int iy, float x, float y) {
-    Vector2 gradient = RandomGradient(ix, iy);
+    Vector2f gradient = RandomGradient(ix, iy);
 
     float dx = x - (float) ix;
     float dy = y - (float) iy;

@@ -6,6 +6,7 @@
 #include "Renderer/Text.h"
 #include "world/World.h"
 #include "renderer/WorldRenderer.h"
+#include "math/Vector2.h"
 
 typedef struct {
     SDL_Window* window;
@@ -40,8 +41,9 @@ int main() {
     Uint32 fps = 0;
     float accumulatedTime = 0.0f;
 
+    auto camera = new Camera();
     auto world = new World("Test World");
-    auto worldRenderer = new WorldRenderer(world);
+    auto worldRenderer = new WorldRenderer(world, camera);
 
     while (isRunning) {
         // Timing
@@ -63,6 +65,20 @@ int main() {
                             isRunning = false;
                         }
 
+                        Vector2 movement = {0, 0};
+                        if (event.key.keysym.sym == SDLK_w) {
+                            movement.y = -1;
+                        } else if (event.key.keysym.sym == SDLK_s) {
+                            movement.y = 1;
+                        }
+
+                        if (event.key.keysym.sym == SDLK_a) {
+                            movement.x = -1;
+                        } else if (event.key.keysym.sym == SDLK_d) {
+                            movement.x = 1;
+                        }
+
+                        camera->move(movement.x * 16, movement.y * 16);
                         break;
                 }
             }

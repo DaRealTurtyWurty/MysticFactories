@@ -26,6 +26,8 @@ public:
     [[nodiscard]] Player* GetPlayer() const {
         return player;
     }
+
+    std::map<ChunkPosition, Chunk*>* GetChunks();
 };
 
 #endif //MYSTICFACTORIES_WORLD_H

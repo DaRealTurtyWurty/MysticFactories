@@ -2,20 +2,64 @@
 #define MYSTICFACTORIES_CHUNK_H
 
 #include <list>
+#include <array>
 #include "entity/Entity.h"
 #include "tile/TileData.h"
-
-const static int CHUNK_SIZE = 16;
+#include "../Constants.h"
 
 struct ChunkPosition {
     int x;
     int y;
+
+    bool operator==(const ChunkPosition& other) const {
+        return x == other.x && y == other.y;
+    }
+
+    bool operator!=(const ChunkPosition& other) const {
+        return !(*this == other);
+    }
+
+    bool operator<(const ChunkPosition& other) const {
+        return x < other.x || (x == other.x && y < other.y);
+    }
+
+    bool operator>(const ChunkPosition& other) const {
+        return x > other.x || (x == other.x && y > other.y);
+    }
+
+    bool operator<=(const ChunkPosition& other) const {
+        return *this < other || *this == other;
+    }
+
+    bool operator>=(const ChunkPosition& other) const {
+        return *this > other || *this == other;
+    }
+
+    ChunkPosition operator+(const ChunkPosition& other) const {
+        return {x + other.x, y + other.y};
+    }
+
+    ChunkPosition operator-(const ChunkPosition& other) const {
+        return {x - other.x, y - other.y};
+    }
+
+    ChunkPosition operator*(const ChunkPosition& other) const {
+        return {x * other.x, y * other.y};
+    }
+
+    ChunkPosition operator/(const ChunkPosition& other) const {
+        return {x / other.x, y / other.y};
+    }
+
+    ChunkPosition operator%(const ChunkPosition& other) const {
+        return {x % other.x, y % other.y};
+    }
 };
 
 class Chunk {
 private:
     std::list<Entity*> entities = {};
-    TileData tiles[CHUNK_SIZE][CHUNK_SIZE];
+    std::array<TileData, CHUNK_SIZE * CHUNK_SIZE> tiles;
 public:
     Chunk();
     void Update();
@@ -23,6 +67,9 @@ public:
     void RemoveEntity(Entity* entity);
     [[nodiscard]] std::list<Entity*> GetEntities() const { return entities; }
     [[nodiscard]] TileData GetTile(int x, int y) const;
+
+    [[nodiscard]] int xToTileSpace(int x) const;
+    [[nodiscard]] int yToTileSpace(int y) const;
 };
 
 #endif //MYSTICFACTORIES_CHUNK_H

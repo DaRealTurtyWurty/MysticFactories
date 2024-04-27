@@ -10,15 +10,18 @@ private:
     TileType type;
 public:
     explicit TileData(TileType type) : type(std::move(type)) {}
+    TileData() : type(EMPTY) {}
 
     [[nodiscard]] TileType GetType() const { return type; }
-    [[nodiscard]] bool isEmpty() const { return type == TileType::EMPTY; }
+    [[nodiscard]] bool isEmpty() const { return type == EMPTY; }
 
     bool operator==(const TileData& other) const {
         return type == other.type;
     }
 
-    virtual void Update();
+    virtual void Update() {
+        // Do nothing
+    }
 };
 
 

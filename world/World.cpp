@@ -5,6 +5,7 @@
 
 World::World(std::string name) : name(std::move(name)) {
     this->player = new Player(100, 100, 0, 0); // TODO: Load data from file
+    Load(); // TEMP
 }
 
 World::~World() {
@@ -35,6 +36,13 @@ void World::Update() {
 
 void World::Load() {
     // TODO: Load world data from file
+
+    // Generate chunks
+    for (int x = -10; x < 10; x++) {
+        for (int y = -10; y < 10; y++) {
+            chunks[{x, y}] = new Chunk();
+        }
+    }
 }
 
 void World::Save() {
@@ -56,7 +64,7 @@ std::vector<Chunk*> World::GetNearbyChunks(int atX, int atY) {
     return nearbyChunks;
 }
 
-std::vector<Chunk *> World::GetNearbyChunks() {
+std::vector<Chunk*> World::GetNearbyChunks() {
     return World::GetNearbyChunks(player->GetXPos(), player->GetYPos());
 }
 
@@ -87,4 +95,8 @@ std::list<Entity *> World::GetEntities(int x, int y, int radius) {
     }
 
     return entities;
+}
+
+std::map<ChunkPosition, Chunk*>* World::GetChunks() {
+    return &chunks;
 }

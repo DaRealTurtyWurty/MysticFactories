@@ -16,9 +16,9 @@ public:
     bool operator==(const TileType& other) const {
         return name == other.name && isSolid == other.isSolid;
     }
-
-    static const TileType &EMPTY;
 };
 
+static const TileType EMPTY = TileType("empty", false);
+static const TileType GRASS = TileType("grass", true);
 
 #endif //MYSTICFACTORIES_TILETYPE_H

@@ -2,8 +2,8 @@
 #define MYSTICFACTORIES_VECTOR2_H
 
 typedef struct {
-    float x;
-    float y;
+    int x;
+    int y;
 } Vector2;
 
 #endif //MYSTICFACTORIES_VECTOR2_H

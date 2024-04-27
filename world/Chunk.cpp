@@ -1,11 +1,7 @@
 #include "Chunk.h"
 
 Chunk::Chunk() {
-    for (int x = 0; x < CHUNK_SIZE; x++) {
-        for (int y = 0; y < CHUNK_SIZE; y++) {
-            tiles[x][y] = TileData(TileType::EMPTY);
-        }
-    }
+    tiles.fill(TileData{GRASS});
 }
 
 void Chunk::Update() {
@@ -19,7 +15,7 @@ void Chunk::Update() {
 
     for (int x = 0; x < CHUNK_SIZE; x++) {
         for (int y = 0; y < CHUNK_SIZE; y++) {
-            tiles[x][y].Update();
+            tiles[x * CHUNK_SIZE + y].Update();
         }
     }
 }
@@ -38,5 +34,13 @@ TileData Chunk::GetTile(int x, int y) const {
     int relativeX = x % CHUNK_SIZE;
     int relativeY = y % CHUNK_SIZE;
 
-    return tiles[relativeX][relativeY];
+    return tiles[relativeX * CHUNK_SIZE + relativeY];
+}
+
+int Chunk::xToTileSpace(int x) const {
+    return x * CHUNK_SIZE * TILE_SIZE;
+}
+
+int Chunk::yToTileSpace(int y) const {
+    return y * CHUNK_SIZE * TILE_SIZE;
 }
