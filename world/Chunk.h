@@ -68,8 +68,8 @@ public:
     [[nodiscard]] std::list<Entity*> GetEntities() const { return entities; }
     [[nodiscard]] TileData GetTile(int x, int y) const;
 
-    [[nodiscard]] int xToTileSpace(int x) const;
-    [[nodiscard]] int yToTileSpace(int y) const;
+    [[nodiscard]] static int GetXWorldSpace(int x) ;
+    [[nodiscard]] static int GetYWorldSpace(int y) ;
 };
 
 #endif //MYSTICFACTORIES_CHUNK_H

@@ -55,6 +55,8 @@ int main() {
 
         // Input
         {
+            Vector2 movement = {0, 0};
+
             while (SDL_PollEvent(&event)) {
                 switch (event.type) {
                     case SDL_QUIT:
@@ -65,23 +67,26 @@ int main() {
                             isRunning = false;
                         }
 
-                        Vector2 movement = {0, 0};
-                        if (event.key.keysym.sym == SDLK_w) {
-                            movement.y = -1;
-                        } else if (event.key.keysym.sym == SDLK_s) {
-                            movement.y = 1;
-                        }
-
-                        if (event.key.keysym.sym == SDLK_a) {
-                            movement.x = -1;
-                        } else if (event.key.keysym.sym == SDLK_d) {
-                            movement.x = 1;
-                        }
-
-                        camera->move(movement.x * 16, movement.y * 16);
                         break;
                 }
             }
+
+            const Uint8* state = SDL_GetKeyboardState(nullptr);
+            if (state[SDL_SCANCODE_W]) {
+                movement.y = -1;
+            } else if (state[SDL_SCANCODE_S]) {
+                movement.y = 1;
+            }
+
+            if (state[SDL_SCANCODE_A]) {
+                movement.x = -1;
+            } else if (state[SDL_SCANCODE_D]) {
+                movement.x = 1;
+            }
+
+            Player* player = world->GetPlayer();
+            player->Move(movement.x * 16, movement.y * 16);
+            camera->SetPosition(player->GetXPos() - SCREEN_WIDTH / 2 - 8, player->GetYPos() - SCREEN_HEIGHT / 2 - 8);
         }
 
         // Update

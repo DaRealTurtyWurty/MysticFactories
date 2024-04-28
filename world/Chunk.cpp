@@ -37,10 +37,10 @@ TileData Chunk::GetTile(int x, int y) const {
     return tiles[relativeX * CHUNK_SIZE + relativeY];
 }
 
-int Chunk::xToTileSpace(int x) const {
+int Chunk::GetXWorldSpace(int x) {
     return x * CHUNK_SIZE * TILE_SIZE;
 }
 
-int Chunk::yToTileSpace(int y) const {
+int Chunk::GetYWorldSpace(int y) {
     return y * CHUNK_SIZE * TILE_SIZE;
 }

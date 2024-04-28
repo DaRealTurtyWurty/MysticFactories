@@ -31,6 +31,8 @@ add_executable(MysticFactories main.cpp
         math/Vector2f.h
         renderer/Camera.cpp
         renderer/Camera.h
+        math/Random.h
+        math/Random.cpp
 )
 
 target_link_libraries(MysticFactories "F:/CPP-Libs/SDL2/lib/x64/SDL2.lib")

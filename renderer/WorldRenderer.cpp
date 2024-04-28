@@ -1,14 +1,17 @@
 #include "WorldRenderer.h"
+#include "../math/Random.h"
+
+std::map<Vector2, SDL_Color> WorldRenderer::tileColors;
 
 WorldRenderer::WorldRenderer(World* pWorld, Camera* pCamera) : world(pWorld), camera(pCamera) {}
 
 void WorldRenderer::Render(SDL_Renderer* renderer) {
-    int camX = camera->getX();
-    int camY = camera->getY();
-
     std::map<ChunkPosition, Chunk*>* chunks = world->GetChunks();
     for (std::pair<ChunkPosition, Chunk*> pair : *chunks) {
-        if (!camera->IsVisible(pair.first.x * CHUNK_SIZE * TILE_SIZE, pair.first.y * CHUNK_SIZE * TILE_SIZE,CHUNK_SIZE * TILE_SIZE, CHUNK_SIZE * TILE_SIZE))
+        int chunkX = Chunk::GetXWorldSpace(pair.first.x);
+        int chunkY = Chunk::GetYWorldSpace(pair.first.y);
+
+        if (!camera->IsVisible(chunkX, chunkY, CHUNK_SIZE * TILE_SIZE, CHUNK_SIZE * TILE_SIZE))
             continue;
 
         Chunk* chunk = pair.second;
@@ -18,11 +21,21 @@ void WorldRenderer::Render(SDL_Renderer* renderer) {
                 if(tile.isEmpty())
                     continue;
 
-                int tileX = (pair.first.x * CHUNK_SIZE * TILE_SIZE) + (x * TILE_SIZE);
-                int tileY = (pair.first.y * CHUNK_SIZE * TILE_SIZE) + (y * TILE_SIZE);
+                int tileX = chunkX + (x * TILE_SIZE);
+                int tileY = chunkY + (y * TILE_SIZE);
 
-                SDL_Rect rect = {tileX - camX, tileY - camY, TILE_SIZE, TILE_SIZE};
-                SDL_SetRenderDrawColor(renderer, 0, 128, 0, 255);
+                SDL_Rect rect = {camera->GetRelativeX(tileX), camera->GetRelativeY(tileY), TILE_SIZE, TILE_SIZE};
+
+                // This is temporary code to randomize the colour until a proper lookup is implemented
+                SDL_Color color = tileColors[{tileX, tileY}];
+                if(color.r == 0 && color.g == 0 && color.b == 0) {
+                    Uint8 red = 20 + Random::Global.Next(5, 10);
+                    Uint8 green = 128 + Random::Global.Next(-10, 20);
+                    Uint8 blue = 20 + Random::Global.Next(5, 10);
+                    color = tileColors[{tileX, tileY}] = {red, green, blue, 255};
+                }
+
+                SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
                 SDL_RenderFillRect(renderer, &rect);
             }
         }
@@ -32,7 +45,7 @@ void WorldRenderer::Render(SDL_Renderer* renderer) {
             if (!camera->IsVisible(entity->GetXPos(), entity->GetYPos(), 16, 16))
                 continue;
 
-            SDL_Rect rect = {entity->GetXPos() - camX, entity->GetYPos() - camY, 16, 16};
+            SDL_Rect rect = {camera->GetRelativeX(entity->GetXPos()), camera->GetRelativeY(entity->GetYPos()), 16, 16};
             SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
             SDL_RenderFillRect(renderer, &rect);
         }
@@ -41,6 +54,6 @@ void WorldRenderer::Render(SDL_Renderer* renderer) {
     Player* player = world->GetPlayer();
 
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-    SDL_Rect playerRect = {player->GetXPos() - camX, player->GetYPos() - camY, 16, 16};
+    SDL_Rect playerRect = {camera->GetRelativeX(player->GetXPos()), camera->GetRelativeY(player->GetYPos()), 16, 16};
     SDL_RenderFillRect(renderer, &playerRect);
 }

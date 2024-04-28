@@ -9,8 +9,8 @@ Entity::~Entity() = default;
 void Entity::Update() {}
 
 void Entity::Move(int x, int y) {
-    xPos = x;
-    yPos = y;
+    xPos += x;
+    yPos += y;
 }
 
 void Entity::Damage(std::uint32_t damage) {

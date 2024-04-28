@@ -7,17 +7,19 @@ private:
 public:
     Camera();
     ~Camera();
-    void update();
-    void render();
-    void move(int pX, int pY);
-    void setX(int pX) { x = pX; }
-    void setY(int pY) { y = pY; }
-    [[nodiscard]] int getX() const { return x; }
-    [[nodiscard]] int getY() const { return y; }
-    [[nodiscard]] int getX(int pX) const { return pX - x; }
-    [[nodiscard]] int getY(int pY) const { return pY - y; }
+    void Update();
+    void Render();
+    void Move(int pX, int pY);
+    void SetX(int pX) { x = pX; }
+    void SetY(int pY) { y = pY; }
+    [[nodiscard]] int GetX() const { return x; }
+    [[nodiscard]] int GetY() const { return y; }
+    [[nodiscard]] int GetRelativeX(int pX) const { return pX - x; }
+    [[nodiscard]] int GetRelativeY(int pY) const { return pY - y; }
 
     [[nodiscard]] bool IsVisible(int pX, int pY, int width, int height) const;
+
+    void SetPosition(int pX, int pY);
 };
 
 #endif //MYSTICFACTORIES_CAMERA_H
