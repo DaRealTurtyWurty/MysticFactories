@@ -37,6 +37,7 @@ void World::Update() {
 void World::Load() {
     // TODO: Load world data from file
 
+    // TODO: Remove
     // Generate chunks
     for (int x = -10; x < 10; x++) {
         for (int y = -10; y < 10; y++) {
